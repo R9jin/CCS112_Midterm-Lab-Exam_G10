@@ -1,0 +1,15 @@
+<?php
+
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ProductController; // <-- ADD THIS LINE
+use App\Http\Controllers\TaskController;
+
+// ADD YOUR API ROUTE HERE
+Route::apiResource('products', ProductController::class);
+Route::apiResource('tasks', TaskController::class);
+
+// This default route is fine to leave
+Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
+    return $request->user();
+});
