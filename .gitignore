@@ -1,0 +1,13 @@
+# Ignore everything
+*
+
+# But keep these folders (and their contents)
+!docker-php83/
+!docker-php83/src/**
+
+!docker-react/
+!docker-react/src/**
+!docker-react/public/**
+
+# Optionally, keep this .gitignore file itself
+!.gitignore
