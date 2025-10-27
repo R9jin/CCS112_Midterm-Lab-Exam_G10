@@ -9,17 +9,17 @@ return new class extends Migration
     /**
      * Run the migrations.
      */
-    public function up(): void
-    {
-        Schema::create('products', function (Blueprint $table) { 
-            $table->id(); $table->string('name');
-            $table->text('description')->nullable(); 
-            $table->decimal('price', 10, 2);
-            $table->integer('stock')->default(0); 
-            $table->timestamps(); 
-        }); 
-
-    }
+    public function up()
+{
+    Schema::create('tasks', function (Blueprint $table) {
+        $table->id();
+        $table->string('title');
+        $table->text('description')->nullable();
+        $table->enum('status', ['pending', 'in-progress', 'completed'])->default('pending');
+        $table->date('due_date')->nullable();
+        $table->timestamps();
+    });
+}
 
     /**
      * Reverse the migrations.
